@@ -13,7 +13,7 @@
 
   (package-initialize)
 
-  (setq packages-to-install '(auto-complete))
+  (setq packages-to-install '(auto-complete google-this))
   (mapcar (lambda (package)
             ;; install package if not already installed
             (unless (package-installed-p package)
