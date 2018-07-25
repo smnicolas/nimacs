@@ -9,7 +9,7 @@
 (load-theme 'manoj-dark)
 
 
-(defun load-init-file ()
+(defun nimacs-mode ()
   (interactive)
   (load-file "~/nimacs/habit.el"))
 
