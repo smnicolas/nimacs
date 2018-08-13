@@ -20,7 +20,8 @@
     (eval (gnus-mail-smtp-conf "smtp.dc.uba.ar"))
     (setq gnus-message-archive-group
           (format-time-string "nnimap+imap.dc.uba.ar:INBOX.Sent.%Y"))
-    (gnus)))
+    (gnus))
+  (kill-emacs))
 
 (defun gnus-gmail () (interactive)
        (customize-set-variable 'gnus-always-read-dribble-file
@@ -30,7 +31,8 @@
        (setq user-full-name user-login-name)
 	    (eval (gnus-mail-imap-conf "imap.gmail.com"))
 	    (eval (gnus-mail-smtp-conf "smtp.gmail.com"))
-	    (gnus))
+	    (gnus)
+        (kill-emacs))
 
 
 (defun gnus-outlook () (interactive)
