@@ -1,7 +1,5 @@
 ;; defaults
 
-;; shortcuts
-(global-set-key (kbd "<f5>") 'compile)
 
 ;; gnus
 (load-file "~/nimacs/gnus-mail.el")

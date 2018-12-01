@@ -11,6 +11,12 @@
 
 (defun nimacs-mode ()
   (interactive)
-  (load-file "~/nimacs/habit.el"))
+  (load-file "~/nimacs/nimacs.el"))
 
-(global-set-key (kbd "C-c lh") 'load-init-file)
+
+;; shortcuts
+(global-set-key (kbd "C-c nm ") 'nimacs-mode)
+
+
+(global-set-key (kbd "<f5>") 'compile)
+(global-set-key (kbd "C-c g") 'magit-status)

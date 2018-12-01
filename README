@@ -1,0 +1,9 @@
+To use this add
+
+. $HOME/nimacs/aliases.sh
+
+to bash init file and
+
+(load-file "~/nimacs/mini.el")
+
+to emacs init file.

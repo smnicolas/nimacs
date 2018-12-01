@@ -1,7 +1,0 @@
-#!/bin/bash
-EMACS=emacs-w3m-1.4.4
-curl -L http://emacs-w3m.namazu.org/$EMACS.tar.gz\
-     -o /tmp/$EMACS.tar.gz \
-     && tar -xf /tmp/$EMACS.tar.gz 
-     && (cd $EMACS \
-             && ./configure && make && sudo make install )
