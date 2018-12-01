@@ -1,7 +1,7 @@
 ;; indentation
 (setq-default tab-width 4)
 (setq-default indent-tabs-mode nil)
-(setq-default c-default-style "k&r")
+(setq-default c-default-style "cc-mode")
 
 (column-number-mode)
 
