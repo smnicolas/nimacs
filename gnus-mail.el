@@ -25,7 +25,7 @@
 
 (defun gnus-gmail ()
   (interactive)
-  ;; (set-mail-home "gmail")
+  (set-mail-home "gmail")
   (customize-set-variable 'gnus-always-read-dribble-file t)
   (setq user-login-name (replace-regexp-in-string
                          "@.*" "" user-mail-address))
