@@ -1,6 +1,3 @@
-;; defaults
-
-
 ;; gnus
 (load-file "~/nimacs/gnus-mail.el")
 
@@ -20,10 +17,6 @@
 
 (package-initialize)
 
-(if (package-installed-p 'w3m)
-    (and (require 'w3m)
-     (setq-default browse-url-browser-function 'w3m-browse-url)))
-
 (if (package-installed-p 'auto-complete)
     (and (require 'auto-complete)
          (add-hook 'prog-mode-hook 'auto-complete-mode)))
@@ -35,5 +28,6 @@
       'text-translator-default-engine
       "google.com_enes")
      (require 'text-translator)))
-  
+
+
     

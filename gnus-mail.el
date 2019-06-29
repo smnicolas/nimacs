@@ -14,6 +14,7 @@
 
 (defun gnus-dc ()
   (interactive)
+  (set-mail-home "dcmail")
   (let ((user-login-name user-mail-address))
     (setq user-full-name user-login-name)
     (eval (gnus-mail-imap-conf "imap.dc.uba.ar"))
@@ -22,12 +23,13 @@
           (format-time-string "nnimap+imap.dc.uba.ar:INBOX.Sent.%Y"))
     (gnus)))
 
-(defun gnus-gmail () (interactive)
-       (customize-set-variable 'gnus-always-read-dribble-file
-			       t)
-       (setq user-login-name (replace-regexp-in-string
-                              "@.*" "" user-mail-address))
-       (setq user-full-name user-login-name)
+(defun gnus-gmail ()
+  (interactive)
+  ;; (set-mail-home "gmail")
+  (customize-set-variable 'gnus-always-read-dribble-file t)
+  (setq user-login-name (replace-regexp-in-string
+                         "@.*" "" user-mail-address))
+  (setq user-full-name user-login-name)
 	    (eval (gnus-mail-imap-conf "imap.gmail.com"))
 	    (eval (gnus-mail-smtp-conf "smtp.gmail.com"))
 	    (gnus))
@@ -57,3 +59,12 @@
          (gnus)))
 
 
+(defun set-mail-home (mailname)
+  (let* ((home (getenv "HOME"))
+         (homelen (length home))
+         (mailname-len (length mailname)))
+    (if (and (> homelen mailname-len)
+             (not (string=
+                   (substring home (- homelen mailname-len))
+                   mailname)))
+        (setenv "HOME" (format "%s/%s/%s" home "gnus-mails" mailname)))))
